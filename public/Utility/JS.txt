@@ -1,0 +1,73 @@
+import ReactDOM from "react-dom/client";
+import "./CSS/style.css";
+
+const header = {
+  color:"blueviolet",
+  backgroundColor:"lightgray"
+}
+
+function SubHeader() {
+  return (<h1 className="heading">React Sub header</h1>);
+}
+
+function Header() {
+  return (<div>
+    <SubHeader/>
+    <h1 style={header}>React App Header</h1>
+  </div>);
+  
+}
+
+function Students(){
+  const fullName = "Bhushan Jain";
+  const exp = 3;
+
+  return (
+    <div className="container p-4">
+      <div className="row">Students Enrolled</div> 
+      <div className="row border">
+        <div className="col-2">
+          <img  src={`https://ui-avatars.com/api/?name=${fullName}`}></img>
+        </div>
+        <div className="col-10">
+          {fullName}
+          <br />
+          Coding EXP: {exp}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+function PreFooter() {
+  return (<h1 style={{color:"pink"}}>PRE Footer</h1>);
+}
+
+function Footer() {
+  return (<h1 className="text-secondary">React App Footer</h1>);
+}
+
+function MainBody() {
+  return (
+    <div>
+      <Header />
+      <h5>Body content</h5>
+      <p>In this project we will work on react JS by building taskOpedia project</p>
+      <p style={{color:"red"}}> This is the main body</p>
+      <ul>
+        <li>Basic foundation</li>
+        <li>Functional and class components</li>
+      </ul>
+      <PreFooter />
+      <Footer />
+    </div>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <div>
+    <MainBody />
+    <Students />
+  </div>
+);
